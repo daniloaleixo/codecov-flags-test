@@ -1,0 +1,36 @@
+name: Testing service1
+
+on:
+  push:
+    paths:
+    - 'service1/**'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [12.x]
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+
+    - name: Install
+      working-directory: service1
+      run: npm i
+
+    - name: Run the tests
+      working-directory: service1
+      run: npm run test
+
+    - name: Upload coverage to Codecov
+      uses: codecov/codecov-action@v1
+      with:
+        directory: ./service1/coverage
+        token: ${{ secrets.CODECOV_TOKEN }}
+        flags: service1

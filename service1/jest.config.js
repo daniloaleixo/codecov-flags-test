@@ -5,13 +5,14 @@ export default {
     "json",
     "ts"
   ],
-  "rootDir": "./src",
+  roots: ['<rootDir>'],
   "testRegex": ".spec.ts$",
   "transform": {
     "^.+\\.(t|j)s$": "ts-jest"
   },
-  "coverageDirectory": "./coverage",
   "testEnvironment": "node",
+  "collectCoverage": true,
+  "coverageDirectory": "./coverage",
   "coveragePathIgnorePatterns": [
     "<rootDir>/apaleo/generated",
     "__mocks__",
@@ -20,6 +21,11 @@ export default {
     ".module.ts",
     ".dto.ts",
     "LoggingService.ts"
+  ],
+  "coverageReporters": ["cobertura", "html"],
+  "collectCoverageFrom": [
+    "src/**/*.{js,jsx,ts,tsx}",
+    "!<rootDir>/node_modules/"
   ],
   "moduleNameMapper": {
     '^@src/(.*)$': '<rootDir>/$1',
