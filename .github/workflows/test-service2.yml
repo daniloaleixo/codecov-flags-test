@@ -31,6 +31,6 @@ jobs:
     - name: Upload coverage to Codecov
       uses: codecov/codecov-action@v1
       with:
-        directory: ./service2/coverage/lcov-report/
+        directory: ./service2/coverage
         token: ${{ secrets.CODECOV_TOKEN }}
         flags: service2
