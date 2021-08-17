@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./",
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "esModuleInterop": true,
+    "lib": ["es2020.string"],
+    "downlevelIteration": true,
+    "rootDir": "..",
+    "target": "es6",
+    "module": "esnext",
+    "allowJs": true,
+    "allowSyntheticDefaultImports": true,
+    "outDir": ".build",
+    "paths": {
+      "@src/*": ["src/*"],
+    }
+  },
+  "include": ["src/**/*.ts"]
+}
