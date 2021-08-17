@@ -22,5 +22,23 @@ flag_management:
       **normal status attributes
     ]?
 
-# No individual flags are added to YAML and flag names are automatically
-# ingested from the Uploader
+
+coverage:
+  status:
+    project:
+      default: off
+      service1:
+        flags: 
+          - service1
+      service2:
+        target: 50%
+        flags: 
+          - service2
+
+flags:
+  service1:
+    paths:
+      - service1/
+  service2:
+    paths:
+      - service2/
