@@ -28,12 +28,20 @@ coverage:
     project:
       default: off
       service1:
+        target: 50%
+        informational: true
+        only_pulls: false
         flags: 
           - service1
       service2:
         target: 50%
+        informational: true
+        only_pulls: false
         flags: 
           - service2
+    patch:
+      default:
+        informational: true
 
 flags:
   service1:
